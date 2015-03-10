@@ -1,0 +1,25 @@
+{
+  "name": "test appbower",
+  "version": "0.0.0",
+  "homepage": "https://.com",
+  "authors": [
+    "Nate Rich"
+  ],
+  "license": "none",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.10.1",
+    "underscore": "amdjs/underscore#1.4.4",
+    "backbone": "amdjs/backbone#1.0.0",
+    "marionette": "1.6.3",
+    "backbone.stickit": "0.8.0",
+    "fabric": "1.4.11"
+  }
+}
