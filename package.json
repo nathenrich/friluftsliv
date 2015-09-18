@@ -8,8 +8,8 @@
   "main": "lib/scripts/app.coffee",
   "scripts": {
     "build": "npm run build:scripts && npm run build:styles",
-    "build:styles": "compass compile --import-path=node_modules --sass-dir=lib/styles --css-dir=dist/ lib/styles/course-runtime*.sass",
-    "build:scripts": "browserify lib/scripts/runtime.coffee --extension=.coffee --extension=.mustache --extension=.jade --standalone CourseRuntime | uglifyjs --screw-ie8 > dist/course-runtime.js",
+    "build:styles": "compass compile --import-path=node_modules --sass-dir=lib/styles --css-dir=dist/ lib/styles/app*.sass",
+    "build:scripts": "browserify lib/scripts/app.coffee --extension=.coffee --extension=.mustache --extension=.jade --standalone App | uglifyjs --screw-ie8 > dist/app.js",
     "clean": "rm -rf dist/",
     "prebuild": "npm run clean && mkdir -p dist",
     "prewatch": "npm run clean && mkdir -p dist",
@@ -18,8 +18,8 @@
     "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS --reporters dots",
     "test:watch": "./node_modules/karma/bin/karma start",
     "watch": "parallelshell 'npm run watch:scripts' 'npm run watch:styles'",
-    "watch:styles": "compass watch --import-path=node_modules --sass-dir=lib/styles --css-dir=dist/ lib/styles/course-runtime*.sass",
-    "watch:scripts": "watchify lib/scripts/runtime.coffee -d -v --extension=.coffee --extension=.mustache --extension=.jade --standalone CourseRuntime -o dist/course-runtime.js"
+    "watch:styles": "compass watch --import-path=node_modules --sass-dir=lib/styles --css-dir=dist/ lib/styles/app*.sass",
+    "watch:scripts": "watchify lib/scripts/runtime.coffee -d -v --extension=.coffee --extension=.mustache --extension=.jade --standalone App -o dist/app.js"
   },
   "browserify": {
     "transform": [
@@ -61,10 +61,8 @@
     "nodemon": "^1.3.7",
     "parallelshell": "^1.0.4",
     "polyfill-function-prototype-bind": "0.0.1",
-    "rise-frontend": "git+https://fb11a4c2e6cb15e2b462419959a1baa84ca14f6c@github.com/articulate/rise-frontend.git#v0.23.0",
     "slang": "^0.3.0",
     "uglify-js": "^2.4.16",
-    "video-runtime": "git+https://fb11a4c2e6cb15e2b462419959a1baa84ca14f6c@github.com/articulate/video-runtime.git#v0.0.3",
     "watchify": "^2.4.0"
   }
 }
