@@ -1,0 +1,29 @@
+doctype html
+html#html
+  head(lang='en')
+    title Course Runtime
+    meta(charset='utf-8')
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport')
+
+    link(media='all' rel='stylesheet' href='/rise-frontend/dist/rise-frontend.css')
+    link(media='all' rel='stylesheet' href='/video-runtime/dist/video-runtime.css')
+    link(media='all' rel='stylesheet' href='/course-runtime.css')
+    <!--[if lt IE 11]>
+    <link media='all' rel='stylesheet' href='/course-runtime-ie.css'>
+    <![endif]-->
+
+    script(type='text/javascript' src='/video-runtime/dist/video-runtime.js' defer)
+    script(type='text/javascript' src='/course-runtime.js' defer)
+
+    script(type='text/javascript').
+      var app, options = {
+        data:     !{ JSON.stringify(data) },
+        lessonId: !{ JSON.stringify(lessonId || null) }
+      };
+
+      document.addEventListener('DOMContentLoaded', function() {
+        options.el = document.body;
+        app = new CourseRuntime(options);
+        app.start();
+      });
+  body.no-scroll-x

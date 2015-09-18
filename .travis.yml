@@ -1,0 +1,41 @@
+language: node_js
+node_js: '0.10'
+install:
+- bundle install
+- npm install
+script: npm test
+before_deploy:
+- npm run build
+deploy:
+- provider: s3
+  access_key_id: AKIAIFAIY4C5OWAQRJEA
+  secret_access_key:
+    secure: lwMNuOMBa91mRXMcBkHrjU/kTqcIkKz4RG1zBT8hw8nL9JDFd1bWWa55pPWIKOw5e4Y7Iepa6l8HaLVTA/PrNtGQ6+/ZTrwp9l4cmhGtgMwyl1mfy+IGeYlZP6ZGrMlMaPR+hTFoiA6hZ2zVrYJeyM5051kN43tcwgy7XF37j/Q=
+  bucket: articulate-web-authoring
+  skip_cleanup: true
+  local_dir: dist
+  upload-dir: course-runtime/master
+- provider: s3
+  access_key_id: AKIAIFAIY4C5OWAQRJEA
+  secret_access_key:
+    secure: lwMNuOMBa91mRXMcBkHrjU/kTqcIkKz4RG1zBT8hw8nL9JDFd1bWWa55pPWIKOw5e4Y7Iepa6l8HaLVTA/PrNtGQ6+/ZTrwp9l4cmhGtgMwyl1mfy+IGeYlZP6ZGrMlMaPR+hTFoiA6hZ2zVrYJeyM5051kN43tcwgy7XF37j/Q=
+  bucket: articulate-web-authoring
+  skip_cleanup: true
+  local_dir: dist
+  upload-dir: course-runtime/$TRAVIS_COMMIT
+  on:
+    all_branches: true
+- provider: s3
+  access_key_id: AKIAIFAIY4C5OWAQRJEA
+  secret_access_key:
+    secure: lwMNuOMBa91mRXMcBkHrjU/kTqcIkKz4RG1zBT8hw8nL9JDFd1bWWa55pPWIKOw5e4Y7Iepa6l8HaLVTA/PrNtGQ6+/ZTrwp9l4cmhGtgMwyl1mfy+IGeYlZP6ZGrMlMaPR+hTFoiA6hZ2zVrYJeyM5051kN43tcwgy7XF37j/Q=
+  bucket: articulate-web-authoring
+  skip_cleanup: true
+  local_dir: dist
+  upload-dir: course-runtime/$TRAVIS_TAG
+  on:
+    tags: true
+notifications:
+  email: false
+  slack:
+    secure: ZsiutrwfWw4kiDVK+t6iX1Ycq8UMPqogmCZZoDxliFgqJozB9KmftDViUtySAN03YqAN1UePAnAUNy+uWoBbnCCVUcz0ygkvbT8HspXR5Yex8GPB2pXkNflr6jt6GvJjbSqzGNWfN21Ftg1VqsuVj6bPxO3/y2pEVUC8TAPxajc=

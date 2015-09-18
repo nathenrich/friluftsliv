@@ -1,0 +1,323 @@
+{
+  "course": {
+    "title": "Business Ethics",
+    "description": "The ethics of business are... uh...",
+    "backgroundImageUrl": "http://fc02.deviantart.net/fs71/f/2013/027/2/6/eastern_gray_squirrel_16_by_easterngraysquirrel-d5pxd2m.jpg",
+    "createdAt": "2015-03-30T15:51:28.006Z",
+    "updatedAt": "2015-03-30T15:51:28.006Z",
+    "lessonIds": [
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26"
+    ],
+    "id": 2
+  },
+  "lessons": [{
+    "title": "First Lessons",
+    "description": null,
+    "content": null,
+    "resources": null,
+    "createdAt": "2015-03-30T15:51:27.962Z",
+    "updatedAt": "2015-03-30T15:51:27.962Z",
+    "id": 14
+  }, {
+    "title": "Presentation",
+    "description": null,
+    "content": {
+      "type": "Presentation",
+      "data": {
+        "slides": [{
+          "audio": {
+            "url": "https://risedev.s3.amazonaws.com/authoring-uploads/33a3f8565c0b0591fb740deaf2537aa3ddb6fa7c_recording-1425568716127.wav",
+            "duration": 20.34068
+          },
+          "thumbnail": {
+            "url": "https://risedev.s3.amazonaws.com/authoring-uploads/9d99990138284b52138f938063402852c0ce13bd_thumbnail-1425568667536.png"
+          },
+          "image": null
+        }]
+      }
+    },
+    "resources": [{
+      "title": "Google",
+      "type": "link",
+      "url": "http://google.com"
+    }, {
+      "title": "foreclosure_form.doc",
+      "type": "doc",
+      "url": "https://risedev.s3.amazonaws.com/media-uploads/1d28a6d4eea8f00c7bbb62864cf0e9fe44d2bffe_foreclosure_form.doc"
+    }],
+    "createdAt": "2015-03-30T15:51:27.969Z",
+    "updatedAt": "2015-03-30T15:51:27.969Z",
+    "id": 15
+  }, {
+    "title": "Process",
+    "description": null,
+    "content": {
+      "type": "Process",
+      "data": {
+        "steps": [{
+          "mediaPosition": "right",
+          "audio": null,
+          "video": null,
+          "image": null,
+          "title": "One",
+          "text": "<p>Put your right foot out.</p>"
+        }, {
+          "mediaPosition": "right",
+          "audio": null,
+          "video": null,
+          "image": null,
+          "title": "Two",
+          "text": "<p>Put your right foot in.</p>"
+        }, {
+          "mediaPosition": "right",
+          "audio": null,
+          "video": null,
+          "image": null,
+          "title": "Three",
+          "undefined": "",
+          "text": "<p>Shake it all about.</p>"
+        }]
+      }
+    },
+    "resources": [],
+    "createdAt": "2015-03-30T15:51:27.972Z",
+    "updatedAt": "2015-03-30T15:51:27.972Z",
+    "id": 16
+  }, {
+    "title": "Labeled Graphic",
+    "description": null,
+    "content": {
+      "type": "LabeledGraphic",
+      "data": {
+        "labels": [{
+          "mediaPosition": "right",
+          "type": "dot",
+          "top": 0.337890625,
+          "left": 0.8895566239316239,
+          "audio": null,
+          "video": null,
+          "image": null,
+          "title": "Circle"
+        }, {
+          "mediaPosition": "right",
+          "type": "dot",
+          "top": 0.434912109375,
+          "left": 0.11120650183150182,
+          "audio": null,
+          "video": null,
+          "image": null,
+          "title": "Pagination title"
+        }, {
+          "mediaPosition": "right",
+          "type": "dot",
+          "top": 0.511083984375,
+          "left": 0.8170405982905983,
+          "audio": null,
+          "video": null,
+          "image": null,
+          "title": "Arrow"
+        }, {
+          "type": "dot",
+          "mediaPosition": "right",
+          "top": 0.7037109375,
+          "left": 0.3840239621489622,
+          "audio": null,
+          "video": null,
+          "image": null,
+          "title": "Dark background"
+        }],
+        "backgroundImage": "https://risedev.s3.amazonaws.com/7d677d9eb760c480531d043169837f32736b54ac_Screen-Shot-2015-03-04-at-2.01.33-PM.png"
+      }
+    },
+    "resources": [],
+    "createdAt": "2015-03-30T15:51:27.973Z",
+    "updatedAt": "2015-03-30T15:51:27.973Z",
+    "id": 17
+  }, {
+    "title": "Second Lessons",
+    "description": null,
+    "content": null,
+    "resources": null,
+    "createdAt": "2015-03-30T15:51:27.974Z",
+    "updatedAt": "2015-03-30T15:51:27.974Z",
+    "id": 18
+  }, {
+    "title": "Timeline",
+    "description": null,
+    "content": {
+      "type": "Timeline",
+      "data": {
+        "periods": [{
+          "width": 0.33333333333,
+          "position": 0,
+          "markers": [{
+            "position": 0.141666666665,
+            "audio": null,
+            "video": null,
+            "image": null,
+            "title": "Bears"
+          }],
+          "title": "First"
+        }, {
+          "width": 0.33333333333,
+          "position": 0.33333333333,
+          "markers": [{
+            "position": 0.474999999995,
+            "audio": null,
+            "video": null,
+            "image": null,
+            "title": "Beets"
+          }],
+          "title": "Second"
+        }, {
+          "width": 0.33333333333,
+          "position": 0.66666666666,
+          "markers": [{
+            "position": 0.8083333333249999,
+            "audio": null,
+            "video": null,
+            "image": null,
+            "title": "Battlestar Galactica"
+          }],
+          "title": "Third"
+        }]
+      }
+    },
+    "resources": [],
+    "createdAt": "2015-03-30T15:51:27.975Z",
+    "updatedAt": "2015-03-30T15:51:27.975Z",
+    "id": 19
+  }, {
+    "title": "Screencast",
+    "description": null,
+    "content": {
+      "type": "Screencast",
+      "data": {
+        "key": "media-uploads/e4ffb7019183bd57401fd7f216f3ab0479624dc1_video.mp4",
+        "duration": 30.13
+      }
+    },
+    "resources": [],
+    "createdAt": "2015-03-30T15:51:27.977Z",
+    "updatedAt": "2015-03-30T15:51:27.977Z",
+    "id": 20
+  }, {
+    "title": "Article",
+    "description": null,
+    "content": {
+      "type": "Article",
+      "data": {
+        "body": "<p>Lorem, Ipsum, Flotsum, and Jetsum all go to a party at Patriq's house. &nbsp;Each of them has on a different solid-color shirt, such that:</p><p><br></p><ol><li>Lorem's shirt is a cool color, but not too cool.</li><li>Ipsum's shirt is a warm color, but not too warm.</li><li>Flotsum's shirt is brighter than Ipsum's and darker that Jetsum's.</li><li>Jetsum isn't wearing red.</li></ol><p><br></p><p>If Patriq has a&nbsp;rare form of color blindness, wherein red looks green,&nbsp;green looks blue, blue looks yellow, and yellow looks red:</p><p><br></p><p><b>Q:</b> &nbsp;What color does Patriq think each of them is wearing?</p><p><br></p><p>(note: answer this question in the quiz at the end of the course)</p>"
+      }
+    },
+    "resources": [],
+    "createdAt": "2015-03-30T15:51:27.979Z",
+    "updatedAt": "2015-03-30T15:51:27.979Z",
+    "id": 21
+  }, {
+    "title": "Document",
+    "description": null,
+    "content": {
+      "type": "Document",
+      "data": {
+        "box_document_id": "380c51d030c64d2dbee25a4f61fa12c0",
+        "file_type": "Word"
+      }
+    },
+    "resources": [],
+    "createdAt": "2015-03-30T15:51:27.980Z",
+    "updatedAt": "2015-03-30T15:51:27.980Z",
+    "id": 22
+  }, {
+    "title": "Video",
+    "description": null,
+    "content": {
+      "type": "Video",
+      "data": {
+        "key": "media-uploads/fd3af068cd92b32c5ec27ef7fafb2d46b53bf8f3_video.mp4",
+        "duration": 30.13
+      }
+    },
+    "resources": [],
+    "createdAt": "2015-03-30T15:51:27.981Z",
+    "updatedAt": "2015-03-30T15:51:27.981Z",
+    "id": 23
+  }, {
+    "title": "Audio",
+    "description": null,
+    "content": {
+      "type": "Audio",
+      "data": {
+        "key": "media-uploads/6b6f9cfd8d5cf20dec32a91050890f86bf90954b_snd_answer_roll_REAL.mp3",
+        "duration": 0
+      }
+    },
+    "resources": [],
+    "createdAt": "2015-03-30T15:51:27.983Z",
+    "updatedAt": "2015-03-30T15:51:27.983Z",
+    "id": 24
+  }, {
+    "title": "Link",
+    "description": null,
+    "content": {
+      "type": "Link",
+      "data": {
+        "url": "http://flintinatux.github.io/anagrammar/"
+      }
+    },
+    "resources": [],
+    "createdAt": "2015-03-30T15:51:27.984Z",
+    "updatedAt": "2015-03-30T15:51:27.984Z",
+    "id": 25
+  }, {
+    "title": "Quiz",
+    "description": null,
+    "content": {
+      "type": "Quiz",
+      "data": {
+        "questions": [{
+          "type": "matching",
+          "mediaPosition": "right",
+          "choices": [{
+            "text": "Lorem",
+            "match": "blue"
+          }, {
+            "text": "Ipsum",
+            "match": "red"
+          }, {
+            "text": "Flotsum",
+            "match": "green"
+          }, {
+            "text": "Jetsum",
+            "match": "yellow"
+          }],
+          "audio": null,
+          "video": null,
+          "image": null,
+          "title": "Please match the following according to the clues provided in the Article lesson."
+        }]
+      },
+      "settings": {
+        "passingScore": "82",
+        "randomizeOrder": false,
+        "revealCorrectAnswers": true
+      }
+    },
+    "resources": [],
+    "createdAt": "2015-03-30T15:51:27.985Z",
+    "updatedAt": "2015-03-30T15:51:27.985Z",
+    "id": 26
+  }]
+}

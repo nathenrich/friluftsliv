@@ -1,11 +1,11 @@
 {
-  "name": "course-runtime",
-  "version": "0.7.0",
+  "name": "friluftsliv",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:articulate/course-runtime"
+    "url": "https://github.com/nathenrich/friluftsliv"
   },
-  "main": "lib/scripts/runtime.coffee",
+  "main": "lib/scripts/app.coffee",
   "scripts": {
     "build": "npm run build:scripts && npm run build:styles",
     "build:styles": "compass compile --import-path=node_modules --sass-dir=lib/styles --css-dir=dist/ lib/styles/course-runtime*.sass",
