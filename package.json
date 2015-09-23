@@ -8,7 +8,7 @@
   "main": "lib/scripts/app.coffee",
   "scripts": {
     "build": "npm run build:scripts && npm run build:styles",
-    "build:styles": "compass compile --import-path=node_modules --sass-dir=lib/styles --css-dir=dist/ lib/styles/app*.sass",
+    "build:styles": "compass compile --import-path=node_modules --sass-dir=lib/sass --css-dir=dist/ lib/sass/app*.sass",
     "build:scripts": "browserify lib/scripts/app.coffee --extension=.coffee --extension=.mustache --extension=.jade --standalone App | uglifyjs --screw-ie8 > dist/app.js",
     "clean": "rm -rf dist/",
     "prebuild": "npm run clean && mkdir -p dist",
@@ -18,8 +18,8 @@
     "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS --reporters dots",
     "test:watch": "./node_modules/karma/bin/karma start",
     "watch": "parallelshell 'npm run watch:scripts' 'npm run watch:styles'",
-    "watch:styles": "compass watch --import-path=node_modules --sass-dir=lib/styles --css-dir=dist/ lib/styles/app*.sass",
-    "watch:scripts": "watchify lib/scripts/runtime.coffee -d -v --extension=.coffee --extension=.mustache --extension=.jade --standalone App -o dist/app.js"
+    "watch:styles": "compass watch --import-path=node_modules --sass-dir=lib/sass --css-dir=dist/ lib/sass/app*.sass",
+    "watch:scripts": "watchify lib/coffee/app.coffee -d -v --extension=.coffee --extension=.mustache --extension=.jade --standalone App -o dist/app.js"
   },
   "browserify": {
     "transform": [
