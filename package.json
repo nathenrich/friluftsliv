@@ -21,6 +21,11 @@
     "watch:styles": "compass watch --import-path=node_modules --sass-dir=lib/sass --css-dir=dist/ lib/sass/app*.sass",
     "watch:scripts": "watchify lib/coffee/app.coffee -d -v --extension=.coffee --extension=.mustache --extension=.jade --standalone App -o dist/app.js"
   },
+  "aliasify": {
+    "aliases": {
+      "react": "./node_modules/authoring-shared/node_modules/react"
+    }
+  },
   "browserify": {
     "transform": [
       "coffeeify",
@@ -30,6 +35,9 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "aliasify": "^1.7.2",
+    "react-dnd": "^1.1.2",
+    "react": "0.13.3",
     "backbone": "~1.1.2",
     "backbone-relational": "^0.9.0",
     "backbone.stickit": "^0.8.0",
