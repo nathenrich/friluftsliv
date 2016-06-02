@@ -1,4 +1,4 @@
-var app = angular.module('chirpApp', ['ngRoute', 'ngResource']).run(function($rootScope) {
+var app = angular.module('app', ['ngRoute', 'ngResource', 'uiGmapgoogle-maps']).run(function($rootScope) {
 	$rootScope.authenticated = false;
 	$rootScope.current_user = '';
 
@@ -35,6 +35,7 @@ app.factory('postService', function($resource){
 app.controller('mainController', function($scope, $rootScope, postService){
 	$scope.posts = postService.query();
 	$scope.newPost = {created_by: '', text: '', created_at: ''};
+	$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
 	$scope.post = function() {
 	  $scope.newPost.created_by = $rootScope.current_user;
