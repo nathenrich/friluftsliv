@@ -1,9 +1,17 @@
 {
-  "name": "Start",
-  "version": "0.0.0",
+  "name": "FRILUFSTLIV",
+  "version": "0.0.1",
   "private": true,
+  "config": {
+    "scripts_in": "src/main.js",
+    "scripts_out": "public/javascripts/bundle.js",
+    "scripts_out_min": "public/javascripts/bundle.min.js"
+  },
   "scripts": {
-    "start": "node ./bin/www"
+    "serve": "node ./bin/www",
+    "start": "npm run serve & npm run watch",
+    "watch": "watchify $npm_package_config_scripts_in -o $npm_package_config_scripts_out -v",
+    "build": "browserify $npm_package_config_scripts_in  | uglifyjs -mc warnings=false > $npm_package_config_scripts_out_min"
   },
   "dependencies": {
     "angular": "^1.5.6",
