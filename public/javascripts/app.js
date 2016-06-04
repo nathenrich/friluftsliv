@@ -35,7 +35,15 @@ app.factory('postService', function($resource){
 app.controller('mainController', function($scope, $rootScope, postService){
 	$scope.posts = postService.query();
 	$scope.newPost = {created_by: '', text: '', created_at: ''};
-	$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+	$scope.map = { center: { latitude: 42, longitude: -73 }, zoom: 8 };
+
+	if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(){
+			$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+		});
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
 
 	$scope.post = function() {
 	  $scope.newPost.created_by = $rootScope.current_user;
