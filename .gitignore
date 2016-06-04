@@ -1,6 +1,9 @@
-/.sass-cache
-/dist
-/node_modules
+# Directories
 
+node_modules/
+javascripts/
+
+# Files
+
+*.log
 .DS_Store
-npm-debug.log*

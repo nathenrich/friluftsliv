@@ -1,2 +1,0 @@
-# friluftsliv
-friluftsliv site source

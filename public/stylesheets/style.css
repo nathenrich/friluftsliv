@@ -1,0 +1,56 @@
+body {
+	background-color: #61ab6c;
+	padding-top:70px;
+	width: 80%;
+  height: 100%;
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.map {
+	position:absolute;
+	z-index:0;
+	width:80%;
+	height:80%;
+}
+
+.overlay {
+	position:absolute;
+	z-index:1;
+}
+
+a {
+	color: #00B7FF;
+}
+
+.title {
+	font-weight: bold;
+}
+
+.submit-btn {
+	background-color: #b1dbff;
+	margin: 10px 0 10px 0;
+}
+
+.post {
+	padding: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+.odd {
+	background-color: #f2f9ff;
+
+}
+.even {
+	background-color: #eceff3;
+}
+
+.form-auth {
+	max-width: 330px;
+	padding: 5px;
+	margin: 0 auto;
+}
+
+.angular-google-map-container {
+	height: 400px;
+}

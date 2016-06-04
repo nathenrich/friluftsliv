@@ -1,68 +1,36 @@
 {
-  "name": "friluftsliv",
-  "version": "0.1.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nathenrich/friluftsliv"
+  "name": "FRILUFSTLIV",
+  "version": "0.0.1",
+  "private": true,
+  "config": {
+    "scripts_in": "src/main.js",
+    "scripts_out": "public/javascripts/bundle.js",
+    "scripts_out_min": "public/javascripts/bundle.min.js"
   },
-  "main": "lib/scripts/app.coffee",
   "scripts": {
-    "build": "npm run build:scripts && npm run build:styles",
-    "build:styles": "compass compile --import-path=node_modules --sass-dir=lib/styles --css-dir=dist/ lib/styles/app*.sass",
-    "build:scripts": "browserify lib/scripts/app.coffee --extension=.coffee --extension=.mustache --extension=.jade --standalone App | uglifyjs --screw-ie8 > dist/app.js",
-    "clean": "rm -rf dist/",
-    "prebuild": "npm run clean && mkdir -p dist",
-    "prewatch": "npm run clean && mkdir -p dist",
-    "serve": "nodemon --watch demo demo/server.coffee",
-    "start": "parallelshell 'npm run watch:scripts' 'npm run watch:styles' 'npm run serve'",
-    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS --reporters dots",
-    "test:watch": "./node_modules/karma/bin/karma start",
-    "watch": "parallelshell 'npm run watch:scripts' 'npm run watch:styles'",
-    "watch:styles": "compass watch --import-path=node_modules --sass-dir=lib/styles --css-dir=dist/ lib/styles/app*.sass",
-    "watch:scripts": "watchify lib/scripts/runtime.coffee -d -v --extension=.coffee --extension=.mustache --extension=.jade --standalone App -o dist/app.js"
+    "serve": "node ./bin/www",
+    "start": "npm run serve & npm run watch",
+    "watch": "watchify $npm_package_config_scripts_in -o $npm_package_config_scripts_out -v",
+    "build": "browserify $npm_package_config_scripts_in  | uglifyjs -mc warnings=false > $npm_package_config_scripts_out_min"
   },
-  "browserify": {
-    "transform": [
-      "coffeeify",
-      "jadeify",
-      "hoganify"
-    ]
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "backbone": "~1.1.2",
-    "backbone-relational": "^0.9.0",
-    "backbone.stickit": "^0.8.0",
-    "browser-sync": "1.9.1",
-    "coffee-script": "^1.9.0",
-    "coffeeify": "^1.0.0",
-    "compression": "^1.4.0",
-    "connect-browser-sync": "^1.0.2",
-    "easing-js": "^1.0.0",
-    "express": "^4.12.4",
-    "hogan.js": "3.0.2",
-    "hoganify": "^0.2.0",
-    "jade": "^1.9.2",
-    "jadeify": "^4.1.0",
-    "jasmine-core": "^2.3.4",
-    "jasmine-jquery": "2.0.6",
-    "jquery": "^2.1.3",
-    "jquery.cookie": "^1.4.1",
-    "jvent": "^0.2.0",
-    "karma": "0.12.31",
-    "karma-browserify": "^4.0.0",
-    "karma-chrome-launcher": "^0.1.7",
-    "karma-growl-notifications-reporter": "0.0.2",
-    "karma-jasmine": "^0.3.5",
-    "karma-jasmine-html-reporter": "^0.1.8",
-    "karma-mocha-reporter": "^1.0.2",
-    "karma-phantomjs-launcher": "^0.1.4",
-    "lodash": "^3.5.0",
-    "nodemon": "^1.3.7",
-    "parallelshell": "^1.0.4",
-    "polyfill-function-prototype-bind": "0.0.1",
-    "slang": "^0.3.0",
-    "uglify-js": "^2.4.16",
-    "watchify": "^2.4.0"
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-google-maps": "^2.3.3",
+    "angular-resource": "^1.5.6",
+    "angular-route": "^1.5.6",
+    "angular-simple-logger": "^0.1.7",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.8.1",
+    "cookie-parser": "~1.3.3",
+    "debug": "^2.0.0",
+    "ejs": "~0.8.5",
+    "express": "~4.9.0",
+    "express-session": "^1.10.3",
+    "lodash": "^4.13.1",
+    "mongoose": "^3.8.23",
+    "morgan": "~1.3.0",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "serve-favicon": "~2.1.3"
   }
 }
