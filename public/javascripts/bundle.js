@@ -63914,71 +63914,7 @@ function plural(ms, n, name) {
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],13:[function(require,module,exports){
-angular             = require('angular');
-lodash              = require('lodash');
-angularSimpleLogger = require('angular-simple-logger');
-angularRoute        = require('angular-route');
-angularResource     = require('angular-resource');
-angularGoogleMaps   = require('angular-google-maps');
-
-var app = angular.module('app', ['ngRoute', 'ngResource', 'uiGmapgoogle-maps']).run(function($rootScope) {
-  $rootScope.authenticated = false;
-  $rootScope.current_user = '';
-
-  $rootScope.signout = function(){
-      $http.get('auth/signout');
-      $rootScope.authenticated = false;
-      $rootScope.current_user = '';
-  };
-});
-
-app.config(function($routeProvider){
-	$routeProvider
-		//the timeline display
-		.when('/', {
-			templateUrl: 'main.html',
-			controller: 'mainController'
-		})
-		//the login display
-		.when('/login', {
-			templateUrl: 'login.html',
-			controller: 'authController'
-		})
-		//the signup display
-		.when('/register', {
-			templateUrl: 'register.html',
-			controller: 'authController'
-		});
-});
-
-app.factory('postService', function($resource){
-	return $resource('/api/posts/:id');
-});
-
-app.controller('mainController', function($scope, $rootScope, postService){
-  $scope.posts = postService.query();
-  $scope.newPost = {created_by: '', text: '', created_at: ''};
-  $scope.map = { center: { latitude: 42, longitude: -73 }, zoom: 8 };
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(){
-      $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
-    });
-  } else {
-    console.log("Geolocation is not supported by this browser.");
-  }
-
-  $scope.post = function() {
-    $scope.newPost.created_by = $rootScope.current_user;
-    $scope.newPost.created_at = Date.now();
-    postService.save($scope.newPost, function(){
-      $scope.posts = postService.query();
-      $scope.newPost = {created_by: '', text: '', created_at: ''};
-    });
-  };
-});
-
-app.controller('authController', function($scope, $http, $rootScope, $location){
+module.exports = function($scope, $http, $rootScope, $location) {
   $scope.user = {username: '', password: ''};
   $scope.error_message = '';
 
@@ -64007,6 +63943,81 @@ app.controller('authController', function($scope, $http, $rootScope, $location){
       }
     });
   };
+}
+
+},{}],14:[function(require,module,exports){
+module.exports = function($scope, $rootScope, postService) {
+  $scope.posts = postService.query();
+  $scope.newPost = {created_by: '', text: '', created_at: ''};
+  $scope.map = { center: { latitude: 42, longitude: -73 }, zoom: 8 };
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(){
+      $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    });
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+
+  $scope.post = function() {
+    $scope.newPost.created_by = $rootScope.current_user;
+    $scope.newPost.created_at = Date.now();
+    postService.save($scope.newPost, function(){
+      $scope.posts = postService.query();
+      $scope.newPost = {created_by: '', text: '', created_at: ''};
+    });
+  };
+}
+
+},{}],15:[function(require,module,exports){
+angular             = require('angular');
+lodash              = require('lodash');
+angularSimpleLogger = require('angular-simple-logger');
+angularRoute        = require('angular-route');
+angularResource     = require('angular-resource');
+angularGoogleMaps   = require('angular-google-maps');
+routes              = require('./routes');
+mainController      = require('./controllers/MainController');
+authController      = require('./controllers/AuthController');
+
+var app = angular.module('app', ['ngRoute', 'ngResource', 'uiGmapgoogle-maps']).run(function($rootScope) {
+  $rootScope.authenticated = false;
+  $rootScope.current_user = '';
+
+  $rootScope.signout = function(){
+      $http.get('auth/signout');
+      $rootScope.authenticated = false;
+      $rootScope.current_user = '';
+  };
 });
 
-},{"angular":8,"angular-google-maps":1,"angular-resource":3,"angular-route":5,"angular-simple-logger":6,"lodash":12}]},{},[13]);
+app.config(routes);
+
+app.controller('mainController', ['$scope', '$rootScope', 'postService', mainController]);
+app.controller('authController', ['$scope', '$http', '$rootScope', '$location', authController]);
+
+app.factory('postService', function($resource){
+	return $resource('/api/posts/:id');
+});
+
+},{"./controllers/AuthController":13,"./controllers/MainController":14,"./routes":16,"angular":8,"angular-google-maps":1,"angular-resource":3,"angular-route":5,"angular-simple-logger":6,"lodash":12}],16:[function(require,module,exports){
+module.exports = function($routeProvider){
+	$routeProvider
+		//the timeline display
+		.when('/', {
+			templateUrl: 'main.html',
+			controller: 'mainController'
+		})
+		//the login display
+		.when('/login', {
+			templateUrl: 'login.html',
+			controller: 'authController'
+		})
+		//the signup display
+		.when('/register', {
+			templateUrl: 'register.html',
+			controller: 'authController'
+		});
+}
+
+},{}]},{},[15]);
